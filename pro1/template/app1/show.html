@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>show</title>
+    {% endblock %}
+
+{% block contend %}
+<table class="table table-success table-striped">
+
+    <thead>
+    <tr>
+       <th>id</th>
+        <th>movieTitle</th>
+        <th>director</th>
+        <th>reviewContent</th>
+        <th> rating</th>
+        <th>createdAt</th>
+        <th>review_email_id</th>
+        <th>status</th>
+        <th>genres</th>
+        <th>ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in obj %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.movieTitle}}</td>
+        <td>{{i.director}}</td>
+        <td>{{i.reviewContent}}</td>
+        <td>{{i.rating}}</td>
+        <td>{{i.createdAt}}</td>
+        <td>{{i.review_email_id}}</td>
+        <td>{{i.status}}</td>
+        <td>{{i.genres}}</td>
+        <td>
+            <a href="/a1/dv/{{i.id}}/"><button class="btn btn-danger">DELETE</button></a>
+            <a href="/a1/uv/{{i.id}}/"><button class="btn btn-warning ">UPDATE</button></a>
+        </td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
